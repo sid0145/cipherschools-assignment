@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    string value:
+    <input type="text" name="inputValue" id="inputValue" /><br />
+    char:
+    <input type="text" name="matchValue" id="matchValue" /><br />
+    <button id="myBtn">replace</button>
+    <p id="demo"></p>
+
+    <script>
+      document.getElementById("myBtn").addEventListener("click", myFun);
+      function myFun() {
+        var string = document.getElementById("inputValue").value.toLowerCase();
+        var char = document.getElementById("matchValue").value.toLowerCase();
+
+        let stringValue = string.split(" ");
+        console.log(stringValue);
+
+        stringValue = stringValue.map((str) => {
+          if (str[0] === char) {
+            return str.split("").reverse().join("");
+          }
+          return str;
+        });
+
+        document.getElementById("demo").innerHTML = stringValue.join(" ");
+      }
+    </script>
+  </body>
+</html>

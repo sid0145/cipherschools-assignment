@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>charCount</title>
+  </head>
+  <body>
+    <h1>counting character with proper vaildation</h1>
+    enter a char:
+    <input type="text" id="char" /><br />
+    enter a string:
+    <input type="text" name="string" id="string" />
+    <br />
+    <button id="myBtn">click</button>
+    <p id="demo"></p>
+    <script>
+      document.getElementById("myBtn").addEventListener("click", getChar);
+      function getChar() {
+        var x = document.getElementById("char").value;
+        var y = document.getElementById("string").value.replace(" ", "");
+        if (x.length < 2 && x.length != 0) {
+          var letter_Count = 0;
+          for (var position = 0; position < y.length; position++) {
+            if (y.charAt(position) == x) {
+              letter_Count += 1;
+            }
+          }
+          document.getElementById('demo').innerHTML='count is:' +letter_Count;
+        } else {
+          alert("should be 1");
+        }
+      }
+    </script>
+  </body>
+</html>

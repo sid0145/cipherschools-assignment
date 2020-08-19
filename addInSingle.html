@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Add</title>
+  </head>
+  <body>
+      <input type="number" id="inputNum">
+      <button id="myBtn">add</button>
+      <p id="demo"></p>
+      <script>
+         document.getElementById('myBtn').addEventListener("click", myFun);
+          function myFun(){
+            var x=document.getElementById('inputNum').value;
+              var count=0;
+              for(var i=1; i<=x; i++){
+                  count =count+i;
+              }
+              document.getElementById('demo').innerHTML='addition is :'+count;
+          }
+      </script>
+  </body>
+</html>

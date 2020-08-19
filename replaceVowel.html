@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>you can give input in uppercase and LowerCase both.and it will replace only vowels.</p>
+    <input type="text" name="inputValue" id="inputValue">
+    <button id="myBtn">replace</button>
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById('myBtn').addEventListener("click", myFun);
+        function myFun() {
+            var string= document.getElementById('inputValue').value.toLowerCase();
+            var result = [];
+            for (var i = 0; i < string.length; i++) {
+                var c = string.charAt(i);
+                if (c.match('a')) {
+                    result.push(1);
+                } 
+                else if(c.match('e')){
+                    result.push(2);
+                }
+                else if(c.match('i')){
+                    result.push(3);
+                }
+                else if(c.match('o')){
+                    result.push(4);
+                }
+                else if(c.match('u')){
+                    result.push(5);
+                }
+                
+                else {
+                    result.push(c);
+                }
+            }
+    
+        document.getElementById('demo').innerHTML =result.join('');
+        }
+    </script>
+</body>
+
+</html>
